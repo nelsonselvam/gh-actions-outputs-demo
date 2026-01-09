@@ -33,7 +33,7 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dist-files
+          name: dist
           path: dist  
   deploy:
     needs: build
@@ -42,9 +42,9 @@ jobs:
       - name: Get Build Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: dist-files
+          name: dist
       - name: output files
-        run: ls -la dist-files 
+        run: ls -la dist
       - name: output file name
         run: echo "Built file is ${{ needs.build.outputs.build-file }}"   
       - name: Deploy
