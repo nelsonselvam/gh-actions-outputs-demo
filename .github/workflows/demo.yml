@@ -44,7 +44,7 @@ jobs:
         with:
           name: dist-files
       - name: output files
-        run: ls -la dist
+        run: ls
       - name: output file name
         run: echo "Built file is ${{ needs.build.outputs.build-file }}"   
       - name: Deploy
